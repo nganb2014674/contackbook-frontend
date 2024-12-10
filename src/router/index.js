@@ -12,6 +12,13 @@ const routes = [{
         component: () =>
             import ("@/views/NotFound.vue"), // Tải trang NotFound khi gặp lỗi 404
     },
+    {
+        path: "/contacts/:id", // Route để chỉnh sửa liên hệ, với :id là tham số dynamic
+        name: "contact.edit", // Tên route
+        component: () =>
+            import ("@/views/ContactEdit.vue"), // Lazy load của ContactEdit.vue
+        props: true, // Truyền các tham số từ $route.params vào props của component
+    },
 ];
 
 const router = createRouter({
